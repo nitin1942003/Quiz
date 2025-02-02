@@ -14,36 +14,43 @@ const Quiz = () => {
     const selectedOption = currentQuestion.options.find((option) => option.id === optionId);
     setSelectedOptions({
       ...selectedOptions,
-      [currentQuestion.id]: selectedOption, // Store the selected option object
+      [currentQuestion.id]: selectedOption, // Store selected option object
     });
   };
 
-  // Handle moving to the next question
+  // Handle clearing selection
+  const handleClearSelection = () => {
+    setSelectedOptions((prev) => {
+      const updatedOptions = { ...prev };
+      delete updatedOptions[currentQuestion.id];
+      return updatedOptions;
+    });
+  };
+
+  // Handle navigation
   const handleNextQuestion = () => {
     if (currentQuestionIndex < quizData.questions.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
     }
   };
 
-  // Handle moving to the previous question
   const handlePreviousQuestion = () => {
     if (currentQuestionIndex > 0) {
       setCurrentQuestionIndex(currentQuestionIndex - 1);
     }
   };
 
-  // Handle quiz submission (Updated Score Calculation)
+  // Handle quiz submission
   const handleSubmitQuiz = () => {
     let newScore = 0;
 
     quizData.questions.forEach((question) => {
       const selectedOption = selectedOptions[question.id];
       if (selectedOption && selectedOption.is_correct) {
-        newScore++; // Increment score if the selected option is correct
+        newScore++;
       }
     });
 
-    // Navigate to results page with score and answers
     navigate("/results", { state: { score: newScore, selectedOptions } });
   };
 
@@ -64,7 +71,7 @@ const Quiz = () => {
                   type="radio"
                   name={`question-${currentQuestion.id}`}
                   value={option.id}
-                  checked={selectedOptions[currentQuestion.id]?.id === option.id} // Match by option ID
+                  checked={selectedOptions[currentQuestion.id]?.id === option.id}
                   onChange={() => handleOptionSelect(option.id)}
                 />
                 {option.description}
@@ -72,6 +79,7 @@ const Quiz = () => {
             </div>
           ))}
         </div>
+        <button onClick={handleClearSelection}>Clear Selection</button>
       </div>
 
       <div className="navigation">
