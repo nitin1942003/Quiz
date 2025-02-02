@@ -31,11 +31,11 @@ A web-based interactive quiz application with gamification features, built using
    ```
 3. Start the development server:
    ```sh
-   npm start
+   npm run dev
    ```
 4. Open the app in your browser at:
    ```
-   http://localhost:3000
+   http://localhost:5173
    ```
 
 ## 🕹️ How to Play
