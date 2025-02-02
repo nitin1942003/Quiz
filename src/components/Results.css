@@ -1,0 +1,95 @@
+/* Results.css */
+.results-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    color: #045f4e;
+  }
+  
+  p {
+    font-size: 1.25rem;
+    text-align: center;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  .question-review {
+    margin-bottom: 30px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 20px;
+  }
+  
+  .options {
+    margin-top: 10px;
+  }
+  
+  .option {
+    background-color: white;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+  
+  .selected {
+    background-color: #cce7ff;
+  }
+  
+  .correct {
+    border-color: #28a745;
+  }
+  
+  .correct-answer {
+    color: green;
+    font-weight: bold;
+    margin-left: 10px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    margin-right: 30px;
+    margin-top: 30px;
+    border: none;
+    background-color: #0b9393;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  button:hover {
+    background-color: #059831;
+  }
+  
+  .solution {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f4f4f4;
+    border-left: 5px solid #28a745;
+  }
+  
+  .retry-container {
+    text-align: center;
+    margin-top: 40px;
+  }
+  
+  .retry-container button {
+    background-color: #f0c546;
+  }
+  
+  .retry-container button:hover {
+    background-color: #e0a800;
+  }
+  
